@@ -27,11 +27,11 @@ const maxNumber = fn(Math.max, isNumber);
 // dole v teste je napisane ake spravanie ocakavame
 // implementacia by mala pouzit existujuce Math a Number APIs
 // 
-const minNumber = 
-const minInteger = 
-const minFinite = 
-const isNegative = 
-const maxNegativeInteger = 
+const minNumber = fn(Math.min, isNumber);
+const minInteger = fn();
+const minFinite = fn();
+const isNegative = fn();
+const maxNegativeInteger = fn();
 //const maxNegativeInteger = 
 
 // 7.   priklad ma demonstrovat ako dokazeme
@@ -44,7 +44,7 @@ const maxNegativeInteger =
 // a ine filtre
 const { isStringObject } = require("util").types;
 const isString = s => typeof s === "string";
-const concat = 
+const concat = '';
 //   
 const concatSafe = fn(concat, or(isNumber, isString, isStringObject));
 
