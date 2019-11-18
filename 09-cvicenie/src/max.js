@@ -10,8 +10,8 @@ const fn = require("./filterArgs.js");
 const isNumber = (any) => typeof any === "number" && any === any;
 
 // 3. kodnime funkciu maxNumber
-// ktora odignoruje vsetky parametre, ktore nie su cislo
-// Priklad (pozri test):
+// ktora odignoruje vsetky parametre, ktore nie su cislo`
+// Priklad (pozri test):`
 // Standardny Math.max:
 //    let nan = Math.max(1, 2, 3, "elefant"); -> NaN
 // Novy maxNumber:
@@ -28,10 +28,10 @@ const maxNumber = fn(Math.max, isNumber);
 // implementacia by mala pouzit existujuce Math a Number APIs
 // 
 const minNumber = fn(Math.min, isNumber);
-const minInteger = fn();
-const minFinite = fn();
-const isNegative = fn();
-const maxNegativeInteger = fn();
+const minInteger = fn(Math.min, Number.isInteger);
+const minFinite = fn(Math.min, Number.isFinite);
+const isNegative = (any) => isNumber(any) && (any < 0);
+const maxNegativeInteger = fn(Math.max, isNegative);
 //const maxNegativeInteger = 
 
 // 7.   priklad ma demonstrovat ako dokazeme
@@ -44,7 +44,7 @@ const maxNegativeInteger = fn();
 // a ine filtre
 const { isStringObject } = require("util").types;
 const isString = s => typeof s === "string";
-const concat = '';
+const concat = String.prototype.concat.bind('');
 //   
 const concatSafe = fn(concat, or(isNumber, isString, isStringObject));
 
