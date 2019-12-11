@@ -1,0 +1,19 @@
+{
+  "name": "http-server-client",
+  "version": "1.0.0",
+  "description": "Uloha 1",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node test/zip-server.demo.js test/lorem_ipsum.txt",
+    "test": "mocha --timeout 32000 --color test/zip-server.spec.js"
+  },
+  "keywords": [],
+  "author": "Tadeas Drahovsky",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
